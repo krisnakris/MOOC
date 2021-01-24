@@ -11,6 +11,11 @@ const create = (newObject) => {
   return request.then(response => response.data);
 }
 
+const getSinglePerson = (id) => {
+  const request = axios.get(`${baseUrl}/{id}`);
+  return request.then(response => response.data);
+}
+
 const remove = (id) => {
   const request = axios.delete(`${baseUrl}/${id}`);
   return request.then(response => response.data);
@@ -21,7 +26,7 @@ const update = (id, newObject) => {
   return request.then(response => response.data);
 }
 
-const serviceList = {getAll, create, remove, update}
+const serviceList = {getAll, create, remove, update, getSinglePerson}
 
 export default serviceList
 
